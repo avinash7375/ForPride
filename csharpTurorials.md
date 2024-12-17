@@ -813,3 +813,364 @@ class BubbleSort
 ---
 
 These **C# problems** and solutions will help you practice problem-solving, improve your logical thinking, and become confident in coding. Let me know if you need more problems or further explanations! 🚀
+
+
+
+Here are **unique problem-solving exercises** focusing on **Data Structures and Algorithms (DSA)** as well as **Object-Oriented Programming (OOP)** in **C#**.
+
+---
+
+# **Data Structures and Algorithms (DSA)**
+
+---
+
+## **1. Find the Missing Number in an Array**
+**Problem:** Given an array containing `n-1` integers in the range `[1, n]`, find the missing number.  
+**Example:**  
+Input: `{1, 2, 4, 5}` → Output: `3`
+
+### **Solution:**
+```csharp
+using System;
+
+class MissingNumber
+{
+    static void Main()
+    {
+        int[] arr = { 1, 2, 4, 5 };
+        int n = arr.Length + 1;
+
+        int expectedSum = n * (n + 1) / 2;
+        int actualSum = 0;
+
+        foreach (int num in arr)
+            actualSum += num;
+
+        int missingNumber = expectedSum - actualSum;
+        Console.WriteLine($"Missing Number: {missingNumber}");
+    }
+}
+```
+
+---
+
+## **2. Find Duplicate Elements in an Array**
+**Problem:** Identify duplicate elements in an array.  
+**Example:**  
+Input: `{4, 2, 4, 5, 2, 3}` → Output: `4, 2`
+
+### **Solution:**
+```csharp
+using System;
+using System.Collections.Generic;
+
+class FindDuplicates
+{
+    static void Main()
+    {
+        int[] arr = { 4, 2, 4, 5, 2, 3 };
+        HashSet<int> seen = new HashSet<int>();
+        HashSet<int> duplicates = new HashSet<int>();
+
+        foreach (int num in arr)
+        {
+            if (seen.Contains(num))
+                duplicates.Add(num);
+            else
+                seen.Add(num);
+        }
+
+        Console.WriteLine("Duplicate Elements: " + string.Join(", ", duplicates));
+    }
+}
+```
+
+---
+
+## **3. Check for Balanced Parentheses (Stack)**
+**Problem:** Write a program to check if a string of parentheses is balanced.  
+**Example:**  
+Input: `"({[]})"` → Output: `Balanced`  
+Input: `"({[})"` → Output: `Not Balanced`
+
+### **Solution:**
+```csharp
+using System;
+using System.Collections.Generic;
+
+class BalancedParentheses
+{
+    static void Main()
+    {
+        Console.Write("Enter parentheses string: ");
+        string input = Console.ReadLine();
+        Stack<char> stack = new Stack<char>();
+
+        foreach (char ch in input)
+        {
+            if (ch == '(' || ch == '{' || ch == '[')
+                stack.Push(ch);
+            else if (ch == ')' && stack.Count > 0 && stack.Peek() == '(')
+                stack.Pop();
+            else if (ch == '}' && stack.Count > 0 && stack.Peek() == '{')
+                stack.Pop();
+            else if (ch == ']' && stack.Count > 0 && stack.Peek() == '[')
+                stack.Pop();
+            else
+            {
+                Console.WriteLine("Not Balanced");
+                return;
+            }
+        }
+
+        Console.WriteLine(stack.Count == 0 ? "Balanced" : "Not Balanced");
+    }
+}
+```
+
+---
+
+## **4. Find Kth Largest Element (Heap/Sorting)**
+**Problem:** Find the Kth largest element in an unsorted array.  
+**Example:**  
+Input: `{3, 2, 1, 5, 6, 4}`, K = 2 → Output: `5`
+
+### **Solution:**
+```csharp
+using System;
+using System.Linq;
+
+class KthLargest
+{
+    static void Main()
+    {
+        int[] arr = { 3, 2, 1, 5, 6, 4 };
+        int k = 2;
+
+        Array.Sort(arr);
+        Console.WriteLine($"The {k}th largest element is: {arr[arr.Length - k]}");
+    }
+}
+```
+
+---
+
+## **5. Implement a Linked List**
+**Problem:** Implement a simple singly linked list and display its elements.
+
+### **Solution:**
+```csharp
+using System;
+
+class Node
+{
+    public int Data;
+    public Node Next;
+
+    public Node(int data)
+    {
+        Data = data;
+        Next = null;
+    }
+}
+
+class LinkedList
+{
+    private Node head;
+
+    public void AddNode(int data)
+    {
+        Node newNode = new Node(data);
+        if (head == null)
+            head = newNode;
+        else
+        {
+            Node current = head;
+            while (current.Next != null)
+                current = current.Next;
+            current.Next = newNode;
+        }
+    }
+
+    public void Display()
+    {
+        Node current = head;
+        while (current != null)
+        {
+            Console.Write(current.Data + " -> ");
+            current = current.Next;
+        }
+        Console.WriteLine("null");
+    }
+}
+
+class LinkedListDemo
+{
+    static void Main()
+    {
+        LinkedList list = new LinkedList();
+        list.AddNode(1);
+        list.AddNode(2);
+        list.AddNode(3);
+        list.Display();
+    }
+}
+```
+
+---
+
+# **Object-Oriented Programming (OOP)**
+
+---
+
+## **6. Create a Student Management System**
+
+**Problem:** Design a program to store and display student details using a class. Include fields for name, ID, and marks.
+
+### **Solution:**
+```csharp
+using System;
+using System.Collections.Generic;
+
+class Student
+{
+    public int ID { get; set; }
+    public string Name { get; set; }
+    public double Marks { get; set; }
+
+    public void Display()
+    {
+        Console.WriteLine($"ID: {ID}, Name: {Name}, Marks: {Marks}");
+    }
+}
+
+class StudentManagement
+{
+    static void Main()
+    {
+        List<Student> students = new List<Student>
+        {
+            new Student { ID = 1, Name = "Alice", Marks = 85.5 },
+            new Student { ID = 2, Name = "Bob", Marks = 78.0 },
+            new Student { ID = 3, Name = "Charlie", Marks = 92.3 }
+        };
+
+        Console.WriteLine("Student Details:");
+        foreach (var student in students)
+            student.Display();
+    }
+}
+```
+
+---
+
+## **7. Bank Account Management with Encapsulation**
+
+**Problem:** Create a `BankAccount` class with private fields and public methods for deposit, withdrawal, and balance check.
+
+### **Solution:**
+```csharp
+using System;
+
+class BankAccount
+{
+    private double balance;
+
+    public void Deposit(double amount)
+    {
+        balance += amount;
+        Console.WriteLine($"Deposited: {amount}, Balance: {balance}");
+    }
+
+    public void Withdraw(double amount)
+    {
+        if (amount > balance)
+            Console.WriteLine("Insufficient balance.");
+        else
+        {
+            balance -= amount;
+            Console.WriteLine($"Withdrawn: {amount}, Balance: {balance}");
+        }
+    }
+
+    public void CheckBalance()
+    {
+        Console.WriteLine($"Balance: {balance}");
+    }
+}
+
+class BankDemo
+{
+    static void Main()
+    {
+        BankAccount account = new BankAccount();
+        account.Deposit(500);
+        account.Withdraw(200);
+        account.CheckBalance();
+    }
+}
+```
+
+---
+
+## **8. Shape Hierarchy Using Polymorphism**
+
+**Problem:** Create a base class `Shape` with a virtual method `Area()`. Inherit `Circle` and `Rectangle` classes and override `Area()`.
+
+### **Solution:**
+```csharp
+using System;
+
+abstract class Shape
+{
+    public abstract double Area();
+}
+
+class Circle : Shape
+{
+    public double Radius { get; set; }
+
+    public Circle(double radius)
+    {
+        Radius = radius;
+    }
+
+    public override double Area()
+    {
+        return Math.PI * Radius * Radius;
+    }
+}
+
+class Rectangle : Shape
+{
+    public double Length { get; set; }
+    public double Width { get; set; }
+
+    public Rectangle(double length, double width)
+    {
+        Length = length;
+        Width = width;
+    }
+
+    public override double Area()
+    {
+        return Length * Width;
+    }
+}
+
+class ShapeDemo
+{
+    static void Main()
+    {
+        Shape circle = new Circle(5);
+        Shape rectangle = new Rectangle(4, 6);
+
+        Console.WriteLine($"Circle Area: {circle.Area()}");
+        Console.WriteLine($"Rectangle Area: {rectangle.Area()}");
+    }
+}
+```
+
+---
+
+These **problems** tackle critical areas of **DSA** and **OOP** and give you practical experience with stacks, linked lists, polymorphism, and encapsulation. Let me know if you'd like further advanced problems or explanations on any topic! 🚀

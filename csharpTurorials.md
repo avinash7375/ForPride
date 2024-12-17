@@ -488,3 +488,328 @@ class AsyncDemo
 ---
 
 This tutorial covers **basic to intermediate topics** in C#. Let me know if you'd like further explanations or advanced examples like **LINQ, Delegates, Events, or Threading**! 😊
+
+
+Here are **C# problem-solving exercises** with their solutions. These problems range from beginner to intermediate levels, covering essential concepts such as loops, arrays, methods, and OOP.
+
+---
+
+# **1. Reverse a Number**
+
+**Problem:** Write a program to reverse a given number.  
+**Example:**  
+Input: `1234` → Output: `4321`
+
+### **Solution:**
+```csharp
+using System;
+
+class ReverseNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = int.Parse(Console.ReadLine());
+        int reversed = 0;
+
+        while (number > 0)
+        {
+            int remainder = number % 10;
+            reversed = reversed * 10 + remainder;
+            number /= 10;
+        }
+
+        Console.WriteLine($"Reversed Number: {reversed}");
+    }
+}
+```
+
+---
+
+# **2. Check for Prime Number**
+
+**Problem:** Write a program to check if a number is prime.  
+**Example:**  
+Input: `7` → Output: `Prime`
+
+### **Solution:**
+```csharp
+using System;
+
+class PrimeNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        bool isPrime = true;
+
+        if (num <= 1)
+            isPrime = false;
+        else
+        {
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        Console.WriteLine(isPrime ? "Prime" : "Not Prime");
+    }
+}
+```
+
+---
+
+# **3. Find Factorial of a Number**
+
+**Problem:** Write a program to calculate the factorial of a number.  
+**Example:**  
+Input: `5` → Output: `120`
+
+### **Solution:**
+```csharp
+using System;
+
+class Factorial
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        long factorial = 1;
+
+        for (int i = 1; i <= num; i++)
+            factorial *= i;
+
+        Console.WriteLine($"Factorial: {factorial}");
+    }
+}
+```
+
+---
+
+# **4. Fibonacci Series**
+
+**Problem:** Print the first `n` numbers of the Fibonacci series.  
+**Example:**  
+Input: `5` → Output: `0 1 1 2 3`
+
+### **Solution:**
+```csharp
+using System;
+
+class Fibonacci
+{
+    static void Main()
+    {
+        Console.Write("Enter the number of terms: ");
+        int terms = int.Parse(Console.ReadLine());
+
+        int a = 0, b = 1;
+
+        Console.Write($"{a} {b} ");
+        for (int i = 2; i < terms; i++)
+        {
+            int next = a + b;
+            Console.Write($"{next} ");
+            a = b;
+            b = next;
+        }
+    }
+}
+```
+
+---
+
+# **5. Palindrome Check**
+
+**Problem:** Check if a string is a palindrome (reads the same forward and backward).  
+**Example:**  
+Input: `"madam"` → Output: `Palindrome`
+
+### **Solution:**
+```csharp
+using System;
+
+class PalindromeCheck
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine();
+        string reversed = "";
+
+        for (int i = input.Length - 1; i >= 0; i--)
+            reversed += input[i];
+
+        Console.WriteLine(input == reversed ? "Palindrome" : "Not a Palindrome");
+    }
+}
+```
+
+---
+
+# **6. Sum of Digits**
+
+**Problem:** Find the sum of digits of a given number.  
+**Example:**  
+Input: `123` → Output: `6`
+
+### **Solution:**
+```csharp
+using System;
+
+class SumOfDigits
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num = int.Parse(Console.ReadLine());
+        int sum = 0;
+
+        while (num > 0)
+        {
+            sum += num % 10;
+            num /= 10;
+        }
+
+        Console.WriteLine($"Sum of Digits: {sum}");
+    }
+}
+```
+
+---
+
+# **7. Find Maximum and Minimum in an Array**
+
+**Problem:** Write a program to find the maximum and minimum element in an array.  
+**Example:**  
+Input: `{3, 1, 4, 1, 5}` → Output: Max: `5`, Min: `1`
+
+### **Solution:**
+```csharp
+using System;
+
+class ArrayMinMax
+{
+    static void Main()
+    {
+        int[] arr = { 3, 1, 4, 1, 5 };
+
+        int max = arr[0], min = arr[0];
+
+        foreach (int num in arr)
+        {
+            if (num > max) max = num;
+            if (num < min) min = num;
+        }
+
+        Console.WriteLine($"Max: {max}, Min: {min}");
+    }
+}
+```
+
+---
+
+# **8. Count Vowels in a String**
+
+**Problem:** Write a program to count the number of vowels in a string.  
+**Example:**  
+Input: `"hello"` → Output: `2`
+
+### **Solution:**
+```csharp
+using System;
+
+class CountVowels
+{
+    static void Main()
+    {
+        Console.Write("Enter a string: ");
+        string input = Console.ReadLine().ToLower();
+        int count = 0;
+
+        foreach (char c in input)
+            if ("aeiou".Contains(c)) count++;
+
+        Console.WriteLine($"Number of vowels: {count}");
+    }
+}
+```
+
+---
+
+# **9. Check Armstrong Number**
+
+**Problem:** A number is called an Armstrong number if the sum of its digits raised to the power of the number of digits equals the number itself.  
+**Example:**  
+Input: `153` → Output: `Armstrong Number`
+
+### **Solution:**
+```csharp
+using System;
+
+class ArmstrongNumber
+{
+    static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int number = int.Parse(Console.ReadLine());
+        int sum = 0, temp = number, digits = number.ToString().Length;
+
+        while (temp > 0)
+        {
+            int remainder = temp % 10;
+            sum += (int)Math.Pow(remainder, digits);
+            temp /= 10;
+        }
+
+        Console.WriteLine(number == sum ? "Armstrong Number" : "Not an Armstrong Number");
+    }
+}
+```
+
+---
+
+# **10. Bubble Sort**
+
+**Problem:** Sort an array using the bubble sort algorithm.  
+**Example:**  
+Input: `{5, 1, 4, 2, 8}` → Output: `{1, 2, 4, 5, 8}`
+
+### **Solution:**
+```csharp
+using System;
+
+class BubbleSort
+{
+    static void Main()
+    {
+        int[] arr = { 5, 1, 4, 2, 8 };
+
+        for (int i = 0; i < arr.Length - 1; i++)
+        {
+            for (int j = 0; j < arr.Length - i - 1; j++)
+            {
+                if (arr[j] > arr[j + 1])
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+
+        Console.WriteLine("Sorted Array: " + string.Join(", ", arr));
+    }
+}
+```
+
+---
+
+These **C# problems** and solutions will help you practice problem-solving, improve your logical thinking, and become confident in coding. Let me know if you need more problems or further explanations! 🚀

@@ -1,3 +1,5 @@
+websites to use
+: https://www.geeksforgeeks.org/python-operators/?ref=lbp
 Computer Science
 Computer:
 it is a device that let's machines (Any mechanical or electronic device), under and think 

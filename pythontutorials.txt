@@ -1,0 +1,96 @@
+Computer Science
+Computer:
+it is a device that let's machines (Any mechanical or electronic device), under and think 
+like humans.
+
+Artificial Intelligence(AI)
+
+Binary numbers (Language that is understandable my machines.)
+
+BCD - Binary Coded Decimal. 	- 0000-ffff - 0-15 - 0000 - 1111.
+EBCDIC - Extended BInary Coded Decimal. - 7 bit - 1 - 0000,  1 - 0000000.
+ASCII - American Standard COde For Information INterchanage. 
+- 8 bit=1 byte, 0 - 00000000, f - 11111111
+LInk to ASCII - https://www.ascii-code.com/
+
+# python - Is a Programming language - Used to - give system calls to a computer.
+It is a a High-level programming language.
+It is very easy to use and implement.
+
+IDLE - Integrated Development Environment.
+
+Assembler, Interpreter, Compiler
+
+Assembler - direct system calls to a computer.
+Interpreter - It used to convert, single line of code at once.
+MOV - 001001001
+m - 091091091
+c - oiwhdladl
+Compiler - It used to convert a block of code at once.
+Python is simple and fast.
+
+
+we are going to study from tutorials and glossary.
+
+Online python interpreter - https://www.onlinegdb.com/
+
+# syntax - A way to write a program
+
+print("Something!!")
+
+# Indentation Error - when you give more spaces.
+
+
+# proper keywords
+
+variable = 
+
+integeer - 0 to n
+floating - 1.234, 3.14
+char - "Anythinf, *, ad"
+boolean = True
+
+OPerators
+Arithmetic - +, -, *, /, %, //
+When using modulus(%), we get the output as Remainder of the division of 2 number.
+When using Truncate(//), we get the output as Quotient with decimals of the division of 2 numbers.
+Logical - 
+Bitwise
+Assignment
+relational
+
+________________________________
+import math
+var1 = 2
+var2 = 16
+
+# operators
+# Arithmetic
+var3 = var2 ** var1
+print(var3)
+
+
+print(math.pow(var2, 2))
+
+
+#comparison operators
+# <, > ==, !=, <=, >=
+# will do this at the time of Conditional statements
+i = 10
+j = 20
+if i == 10 and j == 20:
+    print(i, j)
+i += 1
+print(i) #i = i + 1
+
+
+
+
+
+
+
+
+
+
+
+

@@ -286,5 +286,171 @@ C++ is a versatile and powerful programming language widely used for system/soft
 ---
 
 ## Conclusion
-This tutorial introduces the fundamental concepts of C++ programming for general purposes. Practice writing and executing programs to reinforce your understanding. As you progress, explore more advanced topics like multithreading, file handling, and STL (Standard Template Library).
+**Here are some C++ code examples to illustrate the concepts discussed:**
 
+**Basic Level:**
+
+1. **Simple `for` loop:**
+   ```cpp
+   #include <iostream>
+
+   int main() {
+       for (int i = 0; i < 5; i++) {
+           std::cout << "Hello, world!" << std::endl;
+       }
+       return 0;
+   }
+   ```
+
+2. **Array declaration and initialization:**
+   ```cpp
+   #include <iostream>
+
+   int main() {
+       int numbers[5] = {10, 20, 30, 40, 50};
+       for (int i = 0; i < 5; i++) {
+           std::cout << numbers[i] << " ";
+       }
+       std::cout << std::endl;
+       return 0;
+   }
+   ```
+
+3. **Pointer usage:**
+   ```cpp
+   #include <iostream>
+
+   int main() {
+       int x = 10;
+       int *ptr = &x;
+       std::cout << "Value of x: " << x << std::endl;
+       std::cout << "Address of x: " << &x << std::endl;
+       std::cout << "Value of ptr: " << ptr << std::endl;
+       std::cout << "Value pointed to by ptr: " << *ptr << std::endl;
+       return 0;
+   }
+   ```
+
+**Intermediate Level:**
+
+4. **Pass by reference:**
+   ```cpp
+   #include <iostream>
+
+   void increment(int &num) {
+       num++;
+   }
+
+   int main() {
+       int a = 10;
+       increment(a);
+       std::cout << "Value of a after increment: " << a << std::endl;
+       return 0;
+   }
+   ```
+
+5. **Simple class:**
+   ```cpp
+   #include <iostream>
+
+   class Person {
+   public:
+       std::string name;
+       int age;
+
+       void introduce() {
+           std::cout << "Hello, my name is " << name << " and I am " << age << " years old." << std::endl;
+       }
+   };
+
+   int main() {
+       Person person1;
+       person1.name = "Alice";
+       person1.age = 30;
+       person1.introduce();
+       return 0;
+   }
+   ```
+
+6. **Function template:**
+   ```cpp
+   #include <iostream>
+
+   template <typename T>
+   T maximum(T x, T y) {
+       return (x > y) ? x : y;
+   }
+
+   int main() {
+       int a = 10, b = 20;
+       double c = 3.14, d = 2.718;
+       std::cout << "Maximum of " << a << " and " << b << " is " << maximum(a, b) << std::endl;
+       std::cout << "Maximum of " << c << " and " << d << " is " << maximum(c, d) << std::endl;
+       return 0;
+   }
+   ```
+
+**Advanced Level:**
+
+7. **Stack implementation:**
+   ```cpp
+   #include <iostream>
+
+   class Stack {
+   private:
+       int top;
+       int capacity;
+       int *array;
+
+   public:
+       Stack(int size) {
+           capacity = size;
+           array = new int[capacity];
+           top = -1;
+       }
+
+       bool isFull() {
+           return top == capacity - 1;
+       }
+
+       bool isEmpty() {
+           return top == -1;
+       }
+
+       void push(int x) {
+           if (isFull()) {
+               std::cout << "Stack Overflow" << std::endl;
+               return;
+           }
+           array[++top] = x;
+       }
+
+       int pop() {
+           if (isEmpty()) {
+               std::cout << "Stack Underflow" << std::endl;
+               return -1;
+           }
+           return array[top--];
+       }
+
+       int peek() {
+           if (isEmpty()) {
+               std::cout << "Stack is Empty" << std::endl;
+               return -1;
+           }
+           return array[top];
+       }
+   };
+
+   int main() {
+       Stack s(100);
+       s.push(10);
+       s.push(20);
+       s.push(30);
+       std::cout << s.pop() << " Popped from stack\n";
+       std::cout << "Top element is " << s.peek() << std::endl;
+       return 0;
+   }
+   ```
+
+**I can provide more examples based on specific topics or requirements. Just let me know!**

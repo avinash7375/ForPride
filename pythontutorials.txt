@@ -61,14 +61,14 @@ print("Something!!")
 
 
 # proper keywords
--------------------------------------------------------------------------------------------------------------------------
+
 variable = 
 
 integeer - 0 to n
 floating - 1.234, 3.14
 char - "Anythinf, *, ad"
 boolean = True
-
+-------------------------------------------------------------------------------------------------------------------------
 OPerators
 Arithmetic - +, -, *, /, %, //
 When using modulus(%), we get the output as Remainder of the division of 2 number.

@@ -1,14 +1,31 @@
 websites to use
 : https://www.geeksforgeeks.org/python-operators/?ref=lbp
+
+
 Computer Science
 Computer:
-it is a device that let's machines (Any mechanical or electronic device), under and think 
+it is a device that let's machines (Any mechanical or electronic device), understand think 
 like humans.
 
 Artificial Intelligence(AI)
-
-Binary numbers (Language that is understandable my machines.)
-
+0011 1100
+Binary numbers (Language that is understandable my machines.)- 0101010101
+0000 - 00
+0001 - 01
+0010 - 02
+0011 - 03
+0100 - 04
+0101 - 05
+0110 - 06
+0111 - 07
+1000 - 08
+1001 - 09
+1010 - 10 - A
+1011 - 11 - B
+1100 - 12 - C
+1101 - 13 - D
+1110 - 14 - E
+1111 - 15 - F
 BCD - Binary Coded Decimal. 	- 0000-ffff - 0-15 - 0000 - 1111.
 EBCDIC - Extended BInary Coded Decimal. - 7 bit - 1 - 0000,  1 - 0000000.
 ASCII - American Standard COde For Information INterchanage. 
@@ -44,7 +61,7 @@ print("Something!!")
 
 
 # proper keywords
-
+-------------------------------------------------------------------------------------------------------------------------
 variable = 
 
 integeer - 0 to n
@@ -118,7 +135,6 @@ print(var2)
 
 
 print(var2[5:])
-
 
 
 

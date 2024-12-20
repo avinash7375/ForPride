@@ -85,6 +85,39 @@ if i == 10 and j == 20:
 i += 1
 print(i) #i = i + 1
 
+-- Date - 20/12/2024
+# int(0-n), float(0.0-n), string(a-z,A-Z,spc), boolean(0/1, True,false)
+
+# containers
+
+# tuple - Im-mutable
+var = ("Hello", "Something", 11, 10,12, True)
+print(var)
+
+# list - mutabke
+# creataion of list
+var1 = ["Hello", "Something", 11, 10.12, True]
+print(var1)
+
+# Appending something in list(in the end)
+var1.append(100)
+
+print(var1)
+
+#inserting something in a list at any index
+var1.insert(2, "NewThing")
+print(var1)
+
+
+
+
+
+var2 = [1,2,3,4,5,6,7,8,9,10]
+
+print(var2)
+
+
+print(var2[5:])
 
 
 

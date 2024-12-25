@@ -137,6 +137,19 @@ print(var2)
 print(var2[5:])
 
 
+## 25 December 2024
+# Dictionary
+
+data = {
+"name": "name1",
+"age": 23,
+"year": 3
+}	# creating a dictionary
+
+# Sets
+
+Set_a = {"color1", "color2", "color3"}		#this wil create a set
+
 
 
 

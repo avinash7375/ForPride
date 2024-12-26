@@ -575,6 +575,77 @@ class ExceptionHandling
 
 ---
 
+```csharp
+using System;
+
+public class FactorialException
+{
+    // Custom Exception for Invalid Factorial Input
+    public class InvalidFactorialInputException : Exception
+    {
+        public InvalidFactorialInputException(string message) : base(message) { }
+    }
+
+    // Factorial Calculation Method with Exception Handling
+    public static long CalculateFactorial(int number)
+    {
+        try
+        {
+            // Validate input range
+            if (number < 0)
+            {
+                throw new InvalidFactorialInputException("Factorial cannot be calculated for negative numbers.");
+            }
+
+            if (number > 50)
+            {
+                throw new InvalidFactorialInputException("Factorial calculation exceeds maximum supported number (50).");
+            }
+
+            // Factorial calculation logic
+            return PerformFactorialCalculation(number);
+        }
+        catch (InvalidFactorialInputException ex)
+        {
+            // Custom error handling
+            Console.WriteLine($"Factorial Error: {ex.Message}");
+            return -1; // Indicating calculation failure
+        }
+        catch (OverflowException)
+        {
+            Console.WriteLine("Factorial result is too large to represent.");
+            return -1;
+        }
+    }
+
+    // Actual Factorial Calculation Method
+    private static long PerformFactorialCalculation(int number)
+    {
+        long result = 1;
+        for (int i = 2; i <= number; i++)
+        {
+            result *= i;
+        }
+        return result;
+    }
+
+    // Demonstration Method
+    public static void Main()
+    {
+        int testNumbers = 51;
+        // Test Cases
+        // int[] testNumbers = { -5, 0, 10, 25, 50, 51, 100 };
+
+        // foreach (int num in testNumbers)
+        // {
+            Console.WriteLine($"Factorial of : {CalculateFactorial(testNumbers)}");
+        // }
+    }
+}
+
+```
+
+
 ## **15. String Manipulation**
 ```csharp
 using System;

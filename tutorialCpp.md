@@ -454,3 +454,152 @@ C++ is a versatile and powerful programming language widely used for system/soft
    ```
 
 **I can provide more examples based on specific topics or requirements. Just let me know!**
+
+
+Object-Oriented Programming (OOP) in C++ encompasses several key concepts with practical code examples:
+
+## 1. Classes and Objects
+Classes are blueprints for creating objects, defining attributes and methods.
+
+```cpp
+class Student {
+public:
+    string name;
+    int roll_no;
+    int marks;
+
+    void setData(string name, int roll_no, int marks) {
+        this->name = name;
+        this->roll_no = roll_no;
+        this->marks = marks;
+    }
+
+    void printData() {
+        cout << "Name: " << name << ", Roll No: " << roll_no 
+             << ", Marks: " << marks << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.setData("Guneet", 2, 95);
+    s1.printData();
+}
+```
+
+## 2. Inheritance
+Inheritance allows creating new classes based on existing classes, promoting code reuse.
+
+```cpp
+class Vehicle {
+public:
+    string brand;
+    void show_brand() {
+        cout << "Brand: " << brand << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    string model;
+    void show_model() {
+        cout << "Model: " << model << endl;
+    }
+};
+
+int main() {
+    Car my_car;
+    my_car.brand = "Honda";
+    my_car.model = "Accord";
+    my_car.show_brand();
+    my_car.show_model();
+}
+```
+
+## 3. Polymorphism
+Polymorphism allows methods to behave differently based on the object's type.
+
+```cpp
+class Shape {
+public:
+    virtual double calculateArea() = 0;
+};
+
+class Rectangle : public Shape {
+private:
+    double width, height;
+public:
+    Rectangle(double w, double h) : width(w), height(h) {}
+    double calculateArea() override {
+        return width * height;
+    }
+};
+
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    double calculateArea() override {
+        return 3.14 * radius * radius;
+    }
+};
+```
+
+## 4. Encapsulation
+Encapsulation involves protecting data and providing controlled access.
+
+```cpp
+class BankAccount {
+private:
+    double balance;
+
+public:
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+```
+
+## 5. Operator Overloading
+Operator overloading allows defining custom behaviors for operators.
+
+```cpp
+class Vector {
+private:
+    int x, y;
+public:
+    Vector(int x_val, int y_val) : x(x_val), y(y_val) {}
+
+    Vector operator+(const Vector& other) {
+        return Vector(x + other.x, y + other.y);
+    }
+
+    void display() {
+        cout << "X: " << x << ", Y: " << y << endl;
+    }
+};
+
+int main() {
+    Vector v1(3, 4);
+    Vector v2(1, 2);
+    Vector sum = v1 + v2;
+    sum.display();
+}
+```
+
+These OOP concepts provide powerful tools for creating modular, reusable, and maintainable code in C++.
+
+Citations:
+[1] https://www.scholarhat.com/tutorial/cpp/oops-concept-and-object-class-in-cpp
+[2] https://www.prepbytes.com/blog/cpp-programming/oops-concepts-in-c-with-examples/
+[3] https://www.programiz.com/cpp-programming/oop
+[4] https://unstop.com/blog/oops-concept-in-cpp
+[5] https://www.shiksha.com/online-courses/articles/oops-concepts-in-cpp/
+[6] https://www.codechef.com/learn/course/college-oops-cpp

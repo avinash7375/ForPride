@@ -593,13 +593,71 @@ int main() {
     sum.display();
 }
 ```
+```cpp
+#include <iostream>
+#include <string>
 
-These OOP concepts provide powerful tools for creating modular, reusable, and maintainable code in C++.
+class BankAccount {
+protected:  // Change to protected for inheritance access
+    std::string accountHolder;
+    double balance;
+    std::string accountType;
 
-Citations:
-[1] https://www.scholarhat.com/tutorial/cpp/oops-concept-and-object-class-in-cpp
-[2] https://www.prepbytes.com/blog/cpp-programming/oops-concepts-in-c-with-examples/
-[3] https://www.programiz.com/cpp-programming/oop
-[4] https://unstop.com/blog/oops-concept-in-cpp
-[5] https://www.shiksha.com/online-courses/articles/oops-concepts-in-cpp/
-[6] https://www.codechef.com/learn/course/college-oops-cpp
+public:
+    BankAccount(std::string name, std::string type, double initialBalance) 
+        : accountHolder(name), accountType(type), balance(initialBalance) {}
+
+    // Getter for balance
+    double getBalance() const {
+        return balance;
+    }
+
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+        }
+    }
+};
+
+class SavingsAccount : public BankAccount {
+private:
+    double interestRate;
+
+public:
+    SavingsAccount(std::string name, double initialBalance, double rate) 
+        : BankAccount(name, "Savings", initialBalance), interestRate(rate) {}
+
+    void applyInterest() {
+        // Now uses getBalance() instead of direct access
+        double interest = getBalance() * (interestRate / 100);
+        deposit(interest);
+    }
+};
+
+class ElectricityBill {
+public:
+    // Corrected method with parameter
+    double CalculateBill(int unit) {
+        if (unit <= 50) 
+            return unit * 3.50;
+        else if (unit <= 150) 
+            return 50 * 3.50 + (unit - 50) * 4.00;
+        else 
+            return 50 * 3.50 + 100 * 4.00 + (unit - 150) * 5.20;
+    }
+};
+
+int main() {
+    ElectricityBill b;
+    // Correct method call with argument
+    std::cout << b.CalculateBill(100) << std::endl;
+
+    return 0;
+}
+```

@@ -593,75 +593,7 @@ int main() {
     sum.display();
 }
 ```
-```cpp
-#include <iostream>
-#include <string>
-
-class BankAccount {
-protected:  // Change to protected for inheritance access
-    std::string accountHolder;
-    double balance;
-    std::string accountType;
-
-public:
-    BankAccount(std::string name, std::string type, double initialBalance) 
-        : accountHolder(name), accountType(type), balance(initialBalance) {}
-
-    // Getter for balance
-    double getBalance() const {
-        return balance;
-    }
-
-    void deposit(double amount) {
-        if (amount > 0) {
-            balance += amount;
-        }
-    }
-
-    void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-        }
-    }
-};
-
-class SavingsAccount : public BankAccount {
-private:
-    double interestRate;
-
-public:
-    SavingsAccount(std::string name, double initialBalance, double rate) 
-        : BankAccount(name, "Savings", initialBalance), interestRate(rate) {}
-
-    void applyInterest() {
-        // Now uses getBalance() instead of direct access
-        double interest = getBalance() * (interestRate / 100);
-        deposit(interest);
-    }
-};
-
-class ElectricityBill {
-public:
-    // Corrected method with parameter
-    double CalculateBill(int unit) {
-        if (unit <= 50) 
-            return unit * 3.50;
-        else if (unit <= 150) 
-            return 50 * 3.50 + (unit - 50) * 4.00;
-        else 
-            return 50 * 3.50 + 100 * 4.00 + (unit - 150) * 5.20;
-    }
-};
-
-int main() {
-    ElectricityBill b;
-    // Correct method call with argument
-    std::cout << b.CalculateBill(100) << std::endl;
-
-    return 0;
-}
-```
-## new bill example
+## new bill example for oops
 
 ```cpp
 #include <iostream>

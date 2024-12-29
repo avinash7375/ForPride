@@ -661,3 +661,135 @@ int main() {
     return 0;
 }
 ```
+## new bill example
+
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class representing a generic bank account
+class BankAccount {
+protected:
+    // Private member variables to store account details
+    string accountHolder;   // Name of the account holder
+    double balance;         // Current account balance
+    string accountType;     // Type of bank account
+
+public:
+    // Parameterized constructor to initialize account details
+    // @param name: Account holder's name
+    // @param type: Type of account
+    // @param initialBalance: Starting balance of the account
+    BankAccount(string name, string type, double initialBalance) {
+        accountHolder = name;
+        accountType = type;
+        balance = initialBalance;
+    }
+
+    // Getter method to retrieve current account balance
+    // @return Current balance of the account
+    double getBalance() const {
+        return balance;
+    }
+
+    // Method to deposit money into the account
+    // @param amount: Amount to be deposited
+    void deposit(double amount) {
+        // Validate deposit amount
+        if (amount > 0) {
+            balance += amount;
+            cout << "Deposited: $" << amount << endl;
+        } else {
+            cout << "Invalid deposit amount!" << endl;
+        }
+    }
+
+    // Method to withdraw money from the account
+    // @param amount: Amount to be withdrawn
+    void withdraw(double amount) {
+        // Check if withdrawal is possible
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            cout << "Withdrawn: $" << amount << endl;
+        } else {
+            cout << "Insufficient funds or invalid withdrawal amount!" << endl;
+        }
+    }
+
+    // Virtual method to display account information
+    // Can be overridden by derived classes
+    virtual void displayAccountInfo() {
+        cout << "--- Account Information ---" << endl;
+        cout << "Account Holder: " << accountHolder << endl;
+        cout << "Account Type: " << accountType << endl;
+        cout << "Current Balance: $" << balance << endl;
+    }
+};
+
+// Derived class representing a Savings Account
+// Inherits from BankAccount base class
+class SavingsAccount : public BankAccount {
+private:
+    double interestRate;  // Interest rate for the savings account
+
+public:
+    // Parameterized constructor for Savings Account
+    // @param name: Account holder's name
+    // @param initialBalance: Starting balance
+    // @param rate: Interest rate for the account
+    SavingsAccount(string name, double initialBalance, double rate) 
+        : BankAccount(name, "Savings", initialBalance), interestRate(rate) {}
+
+    // Overridden method to display savings account information
+    // Calls base class method and adds interest rate details
+    void displayAccountInfo() override {
+        // Call base class display method
+        BankAccount::displayAccountInfo();
+        
+        // Display additional savings account information
+        cout << "Interest Rate: " << interestRate << "%" << endl;
+    }
+
+    // Method to apply interest to the savings account
+    void applyInterest() {
+        // Calculate interest based on current balance and interest rate
+        double interest = getBalance() * (interestRate / 100);
+        
+        // Deposit calculated interest
+        deposit(interest);
+        
+        // Provide feedback about interest application
+        cout << "Interest Applied: $" << interest << endl;
+    }
+};
+
+// Main function to demonstrate bank account functionality
+int main() {
+    // Create a savings account for a customer
+    SavingsAccount customerAccount("John Doe", 1000.0, 5.0);
+    
+    // Demonstrate various account operations
+    cout << "Initial Account Setup:" << endl;
+    customerAccount.displayAccountInfo();
+
+    // Deposit money into the account
+    cout << "\nDeposit Operation:" << endl;
+    customerAccount.deposit(500);
+
+    // Withdraw money from the account
+    cout << "\nWithdrawal Operation:" << endl;
+    customerAccount.withdraw(200);
+
+    // Apply interest to the savings account
+    cout << "\nInterest Application:" << endl;
+    customerAccount.applyInterest();
+
+    // Display final account information
+    cout << "\nFinal Account Status:" << endl;
+    customerAccount.displayAccountInfo();
+
+    return 0;
+}
+
+```

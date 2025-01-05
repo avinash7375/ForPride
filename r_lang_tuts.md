@@ -158,3 +158,220 @@ model <- train(
 
 **Additional Recommendation:**
 Practice consistently and work on real-world projects to enhance your skills.
+
+---------------------------------
+
+## Comprehensive R Programming Tutorial
+
+### 1. R Hadoop Integration
+
+#### A. RHadoop Integration Setup
+```r
+# Install Required Packages
+install.packages(c("rmr2", "rhdfs", "rhbase"))
+
+# Load Hadoop Libraries
+library(rmr2)
+library(rhdfs)
+
+# Initialize Hadoop Connection
+hdfs.init()
+
+# Read Hadoop File
+hadoop_data <- hdfs.read("/user/hadoop/input_file.csv")
+```
+
+#### B. MapReduce Example
+```r
+# MapReduce Word Count Implementation
+word_count_mr <- function() {
+  map <- function(k, v) {
+    words <- strsplit(v, " ")[[1]]
+    keyval(words, 1)
+  }
+  
+  reduce <- function(k, v) {
+    total_count <- sum(v)
+    keyval(k, total_count)
+  }
+  
+  # Execute MapReduce Job
+  mapreduce(
+    input = "/input/text_file.txt",
+    output = "/output/word_count",
+    map = map,
+    reduce = reduce
+  )
+}
+```
+
+### 2. Advanced R Packages
+
+#### A. Data Manipulation Packages
+```r
+# Dplyr Advanced Operations
+library(dplyr)
+
+# Complex Data Transformation
+result <- mtcars %>%
+  group_by(cyl) %>%
+  summarise(
+    avg_mpg = mean(mpg),
+    max_hp = max(hp),
+    total_cars = n()
+  ) %>%
+  arrange(desc(avg_mpg))
+```
+
+#### B. Machine Learning Package Example
+```r
+# Caret Package for Machine Learning
+library(caret)
+library(randomForest)
+
+# Model Training
+set.seed(123)
+train_control <- trainControl(
+  method = "cv",
+  number = 10,
+  savePredictions = TRUE
+)
+
+# Random Forest Model
+rf_model <- train(
+  Species ~ ., 
+  data = iris,
+  method = "rf",
+  trControl = train_control
+)
+```
+
+### 3. Control Flow Advanced Techniques
+
+#### A. Enhanced Switch Statement
+```r
+# Contextual Switch Function
+smart_switch <- function(input_value) {
+  switch(
+    as.character(input_value),
+    "1" = list(action = "Low Priority", color = "green"),
+    "2" = list(action = "Medium Priority", color = "yellow"),
+    "3" = list(action = "High Priority", color = "red"),
+    default = list(action = "Unknown", color = "gray")
+  )
+}
+
+# Usage Example
+result <- smart_switch(2)
+print(result$color)
+```
+
+#### B. Advanced Break and Next
+```r
+# Complex Loop Control
+advanced_loop <- function(max_iterations = 100) {
+  error_count <- 0
+  
+  for(i in 1:max_iterations) {
+    # Skip even numbers
+    if(i %% 2 == 0) next
+    
+    # Break if error threshold reached
+    if(error_count > 5) break
+    
+    # Simulated error handling
+    tryCatch({
+      # Potential error-prone operation
+      result <- 1 / (i - 50)
+    }, error = function(e) {
+      error_count <<- error_count + 1
+    })
+  }
+  
+  return(error_count)
+}
+```
+
+### 4. Advanced Data Visualization
+
+#### A. Interactive Visualization
+```r
+# Plotly Interactive Plots
+library(plotly)
+
+# Interactive Scatter Plot
+plot_ly(
+  data = mtcars,
+  x = ~wt,
+  y = ~mpg,
+  color = ~cyl,
+  type = "scatter",
+  mode = "markers"
+) %>%
+  layout(
+    title = "Car Weight vs Mileage",
+    xaxis = list(title = "Weight"),
+    yaxis = list(title = "Miles per Gallon")
+  )
+```
+
+#### B. Geospatial Visualization
+```r
+# Leaflet Maps
+library(leaflet)
+
+# Create Interactive Map
+leaflet() %>%
+  addTiles() %>%
+  addMarkers(
+    lat = c(40.7128, 34.0522),
+    lng = c(-74.0060, -118.2437),
+    popup = c("New York", "Los Angeles")
+  )
+```
+
+### 5. Big Data Processing
+
+#### A. Spark Integration
+```r
+# Spark Connection
+library(sparklyr)
+
+# Connect to Spark
+spark_connection <- spark_connect(master = "local")
+
+# Read Large Dataset
+big_data <- spark_read_csv(
+  spark_connection, 
+  name = "large_dataset",
+  path = "/path/to/large/file.csv"
+)
+```
+
+### Key Learning Objectives
+- Advanced R programming techniques
+- Big data processing
+- Machine learning implementation
+- Interactive data visualization
+- Error handling and control flow
+
+### Recommended Learning Path
+1. Master basic R syntax
+2. Learn package ecosystems
+3. Practice with real datasets
+4. Explore advanced techniques
+5. Build complex data solutions
+
+### Pro Tips
+- Always use version control
+- Document your code
+- Understand package dependencies
+- Practice continuous learning
+- Attend R programming workshops
+
+### Recommended Resources
+- Coursera R Programming Specialization
+- DataCamp R Tracks
+- RStudio Official Documentation
+- Kaggle R Notebooks
+- GitHub R Programming Repositories

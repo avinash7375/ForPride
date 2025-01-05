@@ -161,6 +161,41 @@ Practice consistently and work on real-world projects to enhance your skills.
 
 ---------------------------------
 
+Hadoop is an open-source distributed processing framework designed for managing and processing big data across scalable computer server clusters[1]. It provides a comprehensive solution for storing, processing, and analyzing large and complex datasets from various sources[4].
+
+## Key Characteristics
+
+### Core Components
+- **HDFS (Hadoop Distributed File System)**: Storage component that allows data distribution across multiple machines[4]
+- **YARN (Yet Another Resource Negotiator)**: Resource management component for processing data[4]
+
+### Key Features
+- **Fault Tolerance**: Can continue operations even during hardware failures[5]
+- **Scalability**: Capable of expanding from a single server to thousands of machines[4]
+- **Flexibility**: Handles structured, semi-structured, and unstructured data[1]
+- **Cost-Effectiveness**: Uses commodity hardware and is open-source[5]
+
+## Applications
+Hadoop is widely used in:
+- Data warehousing
+- Business intelligence
+- Machine learning
+- Data processing and analysis
+- Log processing
+- Research
+
+Organizations like Netflix, Yahoo, Facebook, and IBM leverage Hadoop for complex data management and analytics tasks[2][4].
+
+**Pro Tip**: Hadoop's ability to store raw data in "data lakes" enables data scientists to access comprehensive datasets for in-depth analysis[1].
+
+Citations:
+[1] https://www.techtarget.com/searchdatamanagement/definition/Hadoop
+[2] https://www.databricks.com/glossary/hadoop-distributed-file-system-hdfs
+[3] https://www.geeksforgeeks.org/difference-between-big-data-and-apache-hadoop/
+[4] https://www.geeksforgeeks.org/hadoop-an-introduction/
+[5] https://www.sas.com/en_in/insights/big-data/hadoop.html
+
+--------------
 ## Comprehensive R Programming Tutorial
 
 ### 1. R Hadoop Integration

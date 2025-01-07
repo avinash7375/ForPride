@@ -1,4 +1,4 @@
----
+
 
 ### **1. Print a Right-Angled Triangle of Stars**
 **Question**: Write a program to print a right-angled triangle of stars for a given number of rows.  
@@ -8,7 +8,7 @@ for i in range(1, rows + 1):
     print("*" * i)
 ```
 
----
+
 
 ### **2. Reverse a String**
 **Question**: Write a program to reverse a given string.  

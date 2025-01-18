@@ -1,3 +1,6 @@
+https://neon.tech/postgresql/postgresql-tutorial/postgresql-create-table
+
+
 # PostgreSQL Lecture: Installation and Basics on Windows
 
 ## Objective:

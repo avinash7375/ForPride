@@ -1,0 +1,27 @@
+-- Database Navigation
+\c dbname           -- Connect to database 
+\l                  -- List databases
+\q                  -- Quit psql
+
+-- Table/Schema Info
+\dt                 -- List tables
+\d tablename        -- Describe table structure
+\dn                 -- List schemas
+\du                 -- List users/roles
+
+-- Query Execution
+\e                  -- Edit command in editor
+\g                  -- Execute last command
+\s                  -- Show command history
+\timing             -- Toggle execution time display
+
+-- Output Format
+\x                  -- Toggle expanded display
+\a                  -- Toggle aligned output
+\H                  -- Toggle HTML output format
+
+-- Utilities
+\i filename         -- Execute commands from file
+\copy              -- Import/export data
+\?                  -- Show all commands
+\h command         -- Get SQL command help

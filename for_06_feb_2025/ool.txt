@@ -1,0 +1,27 @@
+In your code, there are several operator overloads:
+
+Arithmetic operators:
+
+
+operator + (addition)
+operator - (subtraction)
+operator * (multiplication)
+operator / (division)
+
+
+Increment operators:
+
+
+operator ++() (prefix increment)
+operator ++(int) (postfix increment - note the int parameter which distinguishes it from prefix)
+
+
+Comparison operators:
+
+
+operator < (less than)
+operator > (greater than)
+operator == (equality)
+
+For example, when you write n1 + n2 in your code, the compiler calls n1.operator+(n2) behind the scenes. Similarly, when you write n1 > n2, it calls n1.operator>(n2).
+This allows your custom Number class to work with standard C++ operators in an intuitive way, just like built-in types.

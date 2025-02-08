@@ -87,7 +87,7 @@ int main() {
     Number n2(5);
 
     // Basic arithmetic
-    Number sum = n1 + n2;
+    Number sum = n1.operator+(n2);        //n1.operator+(n2)
     Number diff = n1 - n2;
     Number prod = n1 * n2;
     Number quot = n1 / n2;

@@ -1,3 +1,4 @@
+// Code for operator overloading for 2 operators in class names 'Num'
 #include<iostream>
 using namespace std;
 

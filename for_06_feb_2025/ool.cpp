@@ -1,3 +1,9 @@
+#include <iostream>     // For input/output operations
+#include <cstdlib>     // For general purpose functions
+#include <string>      // For string operations (if needed for displaying messages)
+using namespace std;    // Using standard namespace
+
+
 class Number {
 private:
     int value;

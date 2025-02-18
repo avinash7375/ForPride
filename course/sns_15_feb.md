@@ -196,3 +196,60 @@ This tutorial covers the **core functionalities of Seaborn**, helping you to:
 ✅ Visualize statistical distributions  
 
 Let me know if you need **more details** or **examples**! 🚀
+---
+## EXTRA'S FOR HELP IN pLOTS
+
+PairGrid in seaborn is quite versatile and allows for various customizations to give you more control over your plot. Here are a few more aspects you can control:
+
+1. **Customizing the appearance of plots:**
+   - **Change markers and colors:**
+     ```python
+     g = sns.PairGrid(penguins, hue="species", palette="Set2", markers=["o", "s", "D"])
+     g.map_diag(sns.histplot)
+     g.map_offdiag(sns.scatterplot)
+     g.add_legend()
+     ```
+
+2. **Adjusting plot layout:**
+   - **Control the size of each plot:**
+     ```python
+     g = sns.PairGrid(penguins, hue="species", height=4, aspect=1.5)
+     g.map_diag(sns.histplot)
+     g.map_offdiag(sns.scatterplot)
+     g.add_legend()
+     ```
+
+3. **Customizing individual plots:**
+   - **Adding a KDE plot on diagonal:**
+     ```python
+     g = sns.PairGrid(penguins, hue="species")
+     g.map_diag(sns.kdeplot)
+     g.map_offdiag(sns.scatterplot)
+     g.add_legend()
+     ```
+
+4. **Adding titles and labels:**
+   - **Set axis labels and plot titles:**
+     ```python
+     g = sns.PairGrid(penguins, hue="species")
+     g.map_diag(sns.histplot)
+     g.map_offdiag(sns.scatterplot)
+     g.add_legend()
+     g.set(xlabel="X Axis Label", ylabel="Y Axis Label")
+     plt.subplots_adjust(top=0.9)
+     g.fig.suptitle('PairGrid Example with Penguins Dataset')
+     ```
+
+5. **Applying custom functions:**
+   - **Using a custom function to plot data:**
+     ```python
+     def custom_func(x, y, **kwargs):
+         plt.plot(x, y, marker='o', linestyle='')
+
+     g = sns.PairGrid(penguins, hue="species")
+     g.map_diag(sns.histplot)
+     g.map_offdiag(custom_func)
+     g.add_legend()
+     ```
+
+These are just a few ways to gain more control over the appearance and behavior of your plots using PairGrid in seaborn. Feel free to experiment with other parameters and customization options to best suit your needs!

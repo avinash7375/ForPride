@@ -40,3 +40,13 @@ CREATE TABLE AllDataTypes (
     enum_col ENUM('small', 'medium', 'large'),
     set_col SET('a', 'b', 'c', 'd')
 );
+
+
+
+
+------------------------
+
+---for alter---
+
+ALTER TABLE more
+ADD COLUMN ts_mem TIMESTAMP DEFULT CURRENT_TIMESTAMP;

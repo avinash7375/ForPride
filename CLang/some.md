@@ -1,5 +1,6 @@
 ### 01
-```#include <stdio.h>
+```
+#include <stdio.h>
 
 int main() {
     printf("Size of int: %lu bytes\n", sizeof(int));

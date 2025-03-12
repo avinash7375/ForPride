@@ -1,5 +1,5 @@
 ### 01
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -12,7 +12,7 @@ int main() {
 ```
 
 ### 02
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -24,7 +24,7 @@ int main() {
 ```
 
 ### 03
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -35,8 +35,7 @@ int main() {
 ```
 
 ### 04
-
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -51,8 +50,7 @@ int main() {
 ```
 
 ### 05
-
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -67,7 +65,7 @@ int main() {
 ```
 
 ### 06
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -78,7 +76,7 @@ int main() {
 ```
 
 ### 07
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -89,7 +87,7 @@ int main() {
 ```
 
 ### 08
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -100,7 +98,7 @@ int main() {
 ```
 
 ### 09
-```
+```c
 #include <stdio.h>
 
 int main() {
@@ -111,7 +109,7 @@ int main() {
 ```
 
 ### 10
-```
+```c
 #include <stdio.h>
 
 int main() {

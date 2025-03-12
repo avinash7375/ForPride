@@ -1,0 +1,45 @@
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| hwllo              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| product            |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> create database ak1;
+Query OK, 1 row affected (0.14 sec)
+
+mysql> use ak1;
+Database changed
+mysql> create table management (
+    -> mid INT,
+    -> m_name VARCHAR(30),
+    -> regi_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> INSERT INTO management
+    -> (mid, m_name)
+    -> VALUES (01, "PRIDE COMPUTERS"), (02, "AviiLabs");
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from management;
++------+-----------------+---------------------+
+| mid  | m_name          | regi_date           |
++------+-----------------+---------------------+
+|    1 | PRIDE COMPUTERS | 2025-03-12 13:54:03 |
+|    2 | AviiLabs        | 2025-03-12 13:54:03 |
++------+-----------------+---------------------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+

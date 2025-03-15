@@ -1,0 +1,11 @@
+intro to r
+data types and operators
+decision making
+loops
+function
+lists
+vector
+matrices
+data frames
+ggplot-1
+ggplot-2

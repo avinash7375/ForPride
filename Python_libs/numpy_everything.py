@@ -13,3 +13,6 @@ np.array([127, 128, 129], dtype=np.int8)    # int16, int32, int64
 np.arange(10)
 np.arange(2, 10, dtype=float)
 np.arange(2, 3, 0.1)
+
+
+# https://numpy.org/doc/stable/user/basics.creation.html - lecture_of_on_15/03/25

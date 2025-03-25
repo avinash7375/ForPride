@@ -1,1 +1,8 @@
-
+Series
+Dataframes
+Analysing and Data Cleaning
+Plotting and correlations
+Read csv and json
+cleaning Wrong
+Format and wrong data
+removing duplicates

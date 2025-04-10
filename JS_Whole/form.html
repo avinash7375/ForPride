@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .error { color: red; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="myForm">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name">
+  	<div class="error" id="nameError"></div><br>
+
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email">
+  	<div class="error" id="emailError"></div><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    // prevent form from submitting by default
+    event.preventDefault();
+
+    // clear previous error messages
+    document.getElementById("nameError").textContent = "";
+    document.getElementById("emailError").textContent = "";
+
+    // get form values
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    let valid = true;
+
+    // name validation
+    if (name === "") {
+      document.getElementById("nameError").textContent = "Name is required.";
+      valid = false;
+    }
+
+    // email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+      document.getElementById("emailError").textContent = "Email is required.";
+      valid = false;
+    } else if (!emailPattern.test(email)) {
+      document.getElementById("emailError").textContent = "Invalid email format.";
+      valid = false;
+    }
+
+    // if valid, submit the form or display success
+    if (valid) {
+      alert("Form submitted successfully!");
+      // Optionally, you can submit the form via AJAX or reset it:
+      // document.getElementById("myForm").reset();
+    }
+  });
+</script>
+
+</body>
+</html>

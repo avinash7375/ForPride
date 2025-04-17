@@ -1,45 +1,94 @@
-//merge sort
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-// Merge two parts - 29, 10, 14, 37, 13
-void merge(int a[], int l, int m, int r) {
-    int i = l, j = m + 1, k = 0;
-    int temp[5];
+// Merges two subarrays of arr[].
+// First subarray is arr[left..mid]
+// Second subarray is arr[mid+1..right]
+void merge(vector<int>& arr, int left, int mid, int right)
+{
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+    
+    // Create temp vectors
+    vector<int> L(n1), R(n2);
+    
+    // Copy data to temp vectors L[] and R[]
+    //12, 11, 13, 5, 6, 7
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
 
-    while (i <= m && j <= r) {
-        if (a[i] < a[j])
-            temp[k++] = a[i++];
-        else
-            temp[k++] = a[j++];
+    int i = 0, j = 0;
+    int k = left;
+
+    // Merge the temp vectors back 
+    // into arr[left..right]
+    //LEFT - 11, 12, 13
+    
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        }
+        else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
     }
 
-    while (i <= m)
-        temp[k++] = a[i++];
-    while (j <= r)
-        temp[k++] = a[j++];
+    // Copy the remaining elements of L[], 
+    // if there are any
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
 
-    for (int x = 0; x < k; x++)
-        a[l + x] = temp[x];
-}
-
-// Recursive merge sort
-void mergeSort(int a[], int l, int r) {
-    if (l < r) {
-        int m = (l + r) / 2;
-        mergeSort(a, l, m);
-        mergeSort(a, m + 1, r);
-        merge(a, l, m, r);
+    // Copy the remaining elements of R[], 
+    // if there are any
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
     }
 }
 
-int main() {
-    int arr[5] = {29, 10, 14, 37, 13};
+// begin is for left index and end is right index
+// of the sub-array of arr to be sorted
+void mergeSort(vector<int>& arr, int left, int right)
+{
+    if (left >= right)
+        return;
 
-    mergeSort(arr, 0, 4); // Sort array from index 0 to 4
+    int mid = left + (right - left) / 2;
+    mergeSort(arr, left, mid);
+    mergeSort(arr, mid + 1, right);
+    merge(arr, left, mid, right);
+}
 
-    for (int i = 0; i < 5; i++)
+// Function to print a vector
+void printVector(vector<int>& arr)
+{
+    for (int i = 0; i < arr.size(); i++)
         cout << arr[i] << " ";
+    cout << endl;
+}
 
+// Driver code
+int main()
+{
+    vector<int> arr = { 12, 11, 13, 5, 6, 7 };
+    int n = arr.size();
+
+    cout << "Given vector is \n";
+    printVector(arr);
+
+    mergeSort(arr, 0, n - 1);
+
+    cout << "\nSorted vector is \n";
+    printVector(arr);
     return 0;
 }
+

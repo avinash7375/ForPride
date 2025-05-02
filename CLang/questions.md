@@ -4,7 +4,7 @@ Question 1: Student Record Management
 Problem Description:
 Create a program to manage student records using a struct. Each student has a name, roll number, and marks in three subjects. Write a function to calculate the average marks of a student and another to display all student details. Use an array to store multiple student records.
 Solution Code:
-```
+```c
 #include <stdio.h>
 #include <string.h>
 
@@ -82,7 +82,7 @@ Problem Description:
 Design a program to manage an inventory of products using a struct. Each product has an ID, name, and price. Write a function to find the product with the highest price and another to sort products by price in ascending order. Store products in an array.
 Solution Code:
 c
-```
+```c
 #include <stdio.h>
 #include <string.h>
 
@@ -186,7 +186,7 @@ Problem Description:
 Create a program to track library books using a struct. Each book has a title, author, and year of publication. Write a function to find all books published before a given year and another to count books by a specific author. Use an array to store the books.
 Solution Code:
 c
-```
+```c
 #include <stdio.h>
 #include <string.h>
 

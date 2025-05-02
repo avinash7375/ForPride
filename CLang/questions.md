@@ -1,10 +1,10 @@
 Below are three problem-solving questions in C that involve structs, functions, and arrays, along with their solutions. Each question includes a problem description, solution code, and a brief explanation. These are adapted from the C++ versions to work in C, accounting for C's differences (e.g., no string class, manual memory management, and different I/O).
+
 Question 1: Student Record Management
 Problem Description:
 Create a program to manage student records using a struct. Each student has a name, roll number, and marks in three subjects. Write a function to calculate the average marks of a student and another to display all student details. Use an array to store multiple student records.
 Solution Code:
-c
-
+```
 #include <stdio.h>
 #include <string.h>
 
@@ -69,7 +69,7 @@ int main() {
 
     return 0;
 }
-
+```
 Explanation:  
 
     The Student struct uses a fixed-size character array for the name (since C lacks string).
@@ -82,7 +82,7 @@ Problem Description:
 Design a program to manage an inventory of products using a struct. Each product has an ID, name, and price. Write a function to find the product with the highest price and another to sort products by price in ascending order. Store products in an array.
 Solution Code:
 c
-
+```
 #include <stdio.h>
 #include <string.h>
 
@@ -172,6 +172,7 @@ int main() {
     return 0;
 }
 
+```
 Explanation:  
 
     The Product struct uses a character array for the name and stores ID and price.
@@ -185,7 +186,7 @@ Problem Description:
 Create a program to track library books using a struct. Each book has a title, author, and year of publication. Write a function to find all books published before a given year and another to count books by a specific author. Use an array to store the books.
 Solution Code:
 c
-
+```
 #include <stdio.h>
 #include <string.h>
 
@@ -266,7 +267,7 @@ int main() {
 
     return 0;
 }
-
+```
 Explanation:  
 
     The Book struct uses character arrays for title and author, plus an integer for the year.

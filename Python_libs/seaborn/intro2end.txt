@@ -1,0 +1,2 @@
+Create a project in python all libs(numpy, pandas, matplotlib, seaborn) and solve sports equipments data from kaggle or any resources and do viaualization.
+

@@ -11,7 +11,7 @@ Analyze the sales patterns of various electronic components to understand trends
 
 ### 📦 **Dataset Structure (Example):**
 
-Assume your dataset (`sales_data.csv`) has the following columns:
+Assume your dataset (`sales_data.csv`) has the following columns:    [should be 500 rows]
 
 | Date       | Product   | Category      | Units\_Sold | Unit\_Price | Revenue | Region     | Salesperson |
 | ---------- | --------- | ------------- | ----------- | ----------- | ------- | ---------- | ----------- |

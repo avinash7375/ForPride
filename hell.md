@@ -1,7 +1,3 @@
-Perfect choice! Let’s deep dive into **Divide and Conquer** — it’s a powerful and widely used algorithm design technique.
-
----
-
 ## Divide and Conquer: Deep Dive
 
 ### What is Divide and Conquer?
@@ -98,13 +94,3 @@ def merge(left, right):
     return result
 ```
 
----
-
-### Want to explore:
-
-* **Master Theorem** to solve recurrences?
-* Other divide and conquer examples (like Quick Sort)?
-* Visual explanation or step-by-step walkthrough of an example?
-* Practice problems?
-
-What’s your preference?

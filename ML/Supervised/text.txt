@@ -1,0 +1,10 @@
+Regression 1, 2
+SVM
+Naive Bayes
+KNN
+Gradient Boosting
+Algorithms
+Decision Tree
+XGBoost
+LightGBM
+CatBoost

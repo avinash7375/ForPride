@@ -1,10 +1,10 @@
-Regression 1, 2
-SVM
-Naive Bayes
-KNN
-Gradient Boosting
-Algorithms
-Decision Tree
-XGBoost
-LightGBM
-CatBoost
+Regression 1, 2 ---- Linear and Logistic - Regularization Techniques - L1 and L2
+SVM            ---- Support Vector Machine --- Supports all types of ML Algorithms
+Naive Bayes    --- Classification
+KNN          --- Regression and Analysis
+Gradient Boosting      ---- Regression
+Algorithms       ---- Types of algos --- Based on Depth and nearest node
+Decision Tree    --- Tree Based Algorithm
+XGBoost        ---- Gradient Boosting
+LightGBM      -----    ""
+CatBoost       ----    ""

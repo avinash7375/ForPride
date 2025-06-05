@@ -8,3 +8,7 @@ Decision Tree    --- Tree Based Algorithm
 XGBoost        ---- Gradient Boosting
 LightGBM      -----    ""
 CatBoost       ----    ""
+
+
+For Ensimble Learning
+https://scikit-learn.org/stable/api/sklearn.ensemble.html

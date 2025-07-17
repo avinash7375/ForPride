@@ -1,0 +1,15 @@
+INtro and instruct to php
+operators and vars
+condt stmts and loops
+string function
+function
+navigation (include require)
+array
+cookies
+file handeling
+upload image
+sending mail
+db connections
+crud operation in db
+login module
+revision

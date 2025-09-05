@@ -299,5 +299,3 @@ class User {
 User user = new User(new EmailAlert());
 user.receiveAlert("Hello via email");
 ```
-
-These examples cover key OOP concepts in Java 17. Experiment with each concept by modifying parameters, adding new methods, or combining multiple concepts in larger projects!

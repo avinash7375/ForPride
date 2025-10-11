@@ -1,0 +1,128 @@
+[avii@avii ~]$ python
+Python 3.13.7 (main, Aug 15 2025, 12:34:02) [GCC 15.2.1 20250813] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> #varibales
+>>> #data types
+>>> #operators
+>>> 
+>>> a = 10
+>>> print(a)
+10
+>>> 12a = 12
+  File "<python-input-6>", line 1
+    12a = 12
+     ^
+SyntaxError: invalid decimal literal
+>>> a12
+Traceback (most recent call last):
+  File "<python-input-7>", line 1, in <module>
+    a12
+NameError: name 'a12' is not defined
+>>> a12 = 12
+>>> a12
+12
+>>> your_name = "Hello"
+>>> your_name
+'Hello'
+>>> a = 12.123
+>>> type(a)
+<class 'float'>
+>>> type(your_name)
+<class 'str'>
+>>> 
+>>> 
+>>> 
+>>> a = 12
+>>> type(a)
+<class 'int'>
+>>> def hello():
+...     return 12
+...     
+>>> type(hello)
+<class 'function'>
+>>> 
+>>> 
+>>> 
+>>> 
+>>> #arthmetic, logical, relational, bitwise
+>>> 
+>>> 12+13
+25
+>>> 12.12+13.39
+25.509999999999998
+>>> 
+>>> 
+>>> 12-1
+11
+>>> 12*2
+24
+>>> 12/12
+1.0
+>>> 12%2
+0
+>>> 15%4
+3
+>>> 14/4
+3.5
+>>> 14//4
+3
+>>> 
+>>> 
+>>> 12==12
+True
+>>> 12!= 12
+False
+>>> 12<12
+False
+>>> 12>13
+False
+>>> 12<13
+True
+>>> 12 == 12
+True
+>>> 12 != 13
+True
+>>> 12>= 10
+True
+>>> 12<=13
+True
+>>> 12>= 12
+True
+>>> 12<= 12
+True
+>>> a = True
+>>> b = fale
+Traceback (most recent call last):
+  File "<python-input-53>", line 1, in <module>
+    b = fale
+        ^^^^
+NameError: name 'fale' is not defined. Did you mean: 'False'?
+>>> b = False
+>>> !a
+  File "<python-input-55>", line 1
+    !a
+    ^
+SyntaxError: invalid syntax
+>>> not a
+False
+>>> not b
+True
+>>> a and b
+False
+>>> a or b
+True
+>>> a^b
+True
+>>> 0^0
+0
+>>> 1^1
+0
+>>> 1^0
+1
+>>> 0^1
+1
+>>> 10<<2
+40
+>>> 10>>2
+2
+>>> 

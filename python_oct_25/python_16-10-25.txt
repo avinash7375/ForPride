@@ -1,0 +1,215 @@
+(calls) [avii@avii calls]$ python
+Python 3.13.7 (main, Aug 15 2025, 12:34:02) [GCC 15.2.1 20250813] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> #set, dictionary, list, tuple
+>>> a = (1,2,3,4,5)
+>>> a[2] = 4
+Traceback (most recent call last):
+  File "<python-input-2>", line 1, in <module>
+    a[2] = 4
+    ~^^^
+TypeError: 'tuple' object does not support item assignment
+>>> 
+
+
+>>> a.length
+Traceback (most recent call last):
+  File "<python-input-3>", line 1, in <module>
+    a.length
+AttributeError: 'tuple' object has no attribute 'length'
+>>> len(a)
+5
+>>> type(a)
+<class 'tuple'>
+>>> 
+
+
+
+
+
+
+>>> b = [1,2,3,4,5]
+>>> b[2] = 10
+>>> b
+[1, 2, 10, 4, 5]
+>>> len(b)
+5
+>>> b[:3]
+[1, 2, 10]
+>>> b[:-1]
+[1, 2, 10, 4]
+>>> b[::-1]
+[5, 4, 10, 2, 1]
+>>> dict ={
+... "name" : ["n1", "n2"],
+... "age" : [22,24]
+... }
+>>> dict[name]
+Traceback (most recent call last):
+  File "<python-input-14>", line 1, in <module>
+    dict[name]
+         ^^^^
+NameError: name 'name' is not defined
+>>> dict["name"]
+['n1', 'n2']
+>>> dict["age"]
+[22, 24]
+>>> dict["age"][1]
+24
+>>> dict["age"] = [24,25,26]
+>>> dict
+{'name': ['n1', 'n2'], 'age': [24, 25, 26]}
+>>> dict["age"][1]
+25
+>>> dict["age"][1] = 32
+>>> dict
+{'name': ['n1', 'n2'], 'age': [24, 32, 26]}
+>>> dict["salary"] = [22000, 21000,32000]
+>>> dict
+{'name': ['n1', 'n2'], 'age': [24, 32, 26], 'salary': [22000, 21000, 32000]}
+>>> a = {12,13,14,15}
+>>> type(a)
+<class 'set'>
+>>> type(dict)
+<class 'dict'>
+>>> dict[1]
+Traceback (most recent call last):
+  File "<python-input-28>", line 1, in <module>
+    dict[1]
+    ~~~~^^^
+KeyError: 1
+>>> dict["name","age"][1]
+Traceback (most recent call last):
+  File "<python-input-29>", line 1, in <module>
+    dict["name","age"][1]
+    ~~~~^^^^^^^^^^^^^^
+KeyError: ('name', 'age')
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 12
+12
+>>> 12 >> 2
+3
+>>> 12 <<2
+48
+>>> # control structures
+>>> # conditions - if, if-else, if-else-ladder, nested-if-else
+>>> 
+>>> a = 10
+>>> if(a>10):
+...     print(5)
+...     
+>>> a = 12
+>>> if(a>10):
+...     print(5)
+...     
+5
+>>> if(a>10):
+...     print(12)
+...     
+12
+>>> if(a>10):
+...     print(a)
+...     
+12
+>>> a=42
+>>> if(a>10):
+...     print(a)
+...     
+42
+>>> if(a>10):
+...     print(a)
+... else:
+...     print("Myvalues was false")
+...     
+42
+>>> a=2
+>>> if(a>10):
+...     print(a)
+... else:
+...     print("Myvalues was false")
+...     
+Myvalues was false
+>>> a=12
+>>> a,b,c= 12,13,14
+>>> if(a<b) and (a<c):
+...     print("A is smallest")
+... else:
+...     if(b<a) and (b<c):
+...         print("B is Smallest")
+...     else:
+...         print("C is smallest")
+...         
+A is smallest
+>>> a = 15
+>>> if(a<b) and (a<c):
+...     print("A is smallest")
+... else:
+...     if(b<a) and (b<c):
+...         print("B is Smallest")
+...     else:
+...         print("C is smallest")
+...         
+B is Smallest
+>>> c = 10
+>>> if(a<b) and (a<c):
+...     print("A is smallest")
+... else:
+...     if(b<a) and (b<c):
+...         print("B is Smallest")
+...     else:
+...         print("C is smallest")
+...         
+C is smallest
+>>> 
+>>> 
+>>> 
+>>> Month = input("Enter a month : ")
+Enter a month : 
+>>> if(month == 1):
+...     print("Jan")
+... elif (month == 2):
+...     print("Feb")
+... elif (month == 3):
+...     print("March")
+... else:
+...     print("No Matching")
+...     
+Traceback (most recent call last):
+  File "<python-input-70>", line 1, in <module>
+    if(month == 1):
+       ^^^^^
+NameError: name 'month' is not defined. Did you mean: 'Month'?
+>>> month = 2
+>>> if(month == 1):
+...     print("Jan")
+... elif (month == 2):
+...     print("Feb")
+... elif (month == 3):
+...     print("March")
+... else:
+...     print("No Matching")
+...     
+Feb
+>>> month = 5
+>>> if(month == 1):
+...     print("Jan")
+... elif (month == 2):
+...     print("Feb")
+... elif (month == 3):
+...     print("March")
+... else:
+...     print("No Matching")
+...     
+No Matching
+>>> 

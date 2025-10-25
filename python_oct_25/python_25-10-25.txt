@@ -1,0 +1,169 @@
+>>> # for, while
+>>>
+>>>
+>>> i = 0
+>>> while(i<10):
+...     print(i, " Hello")
+...     i+=1
+...
+0  Hello
+1  Hello
+2  Hello
+3  Hello
+4  Hello
+5  Hello
+6  Hello
+7  Hello
+8  Hello
+9  Hello
+>>> for i in range(10):
+...     print(i)
+...
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> for i in [1,2,3,4,5]:
+...     print(i)
+...
+1
+2
+3
+4
+5
+>>> for i in range(0, 10, 2):
+...     print(i)
+...
+0
+2
+4
+6
+8
+>>> for i in range(51, 80, 2):
+...     print(i)
+...
+51
+53
+55
+57
+59
+61
+63
+65
+67
+69
+71
+73
+75
+77
+79
+>>> for i in range(50, 80, 2):
+...     print(i)
+...
+50
+52
+54
+56
+58
+60
+62
+64
+66
+68
+70
+72
+74
+76
+78
+>>> for i in range(5):
+...     for j in range(i):
+...         print("*")
+...     print()
+...
+
+*
+
+*
+*
+
+*
+*
+*
+
+*
+*
+*
+*
+
+>>> for i in range(5):
+...     for j in range(0,i):
+...         print("*")
+...     print("\n")
+...
+
+
+*
+
+
+*
+*
+
+
+*
+*
+*
+
+
+*
+*
+*
+*
+
+
+>>> for i in range(5):
+...     for j in range(i):
+...         print("*", end=" ")
+...     print("\n")
+...
+
+
+*
+
+* *
+
+* * *
+
+* * * *
+
+>>> for i in range(5):
+...     for j in range(i):
+...         print("*", end=" ")
+...     print("")
+...
+
+*
+* *
+* * *
+* * * *
+>>> for i in range(10):
+...     for j in range(i):
+...         print("*", end=" ")
+...     print("")
+...
+
+*
+* *
+* * *
+* * * *
+* * * * *
+* * * * * *
+* * * * * * *
+* * * * * * * *
+* * * * * * * * *
+>>>
